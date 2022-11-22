@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html >
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
@@ -9,13 +9,13 @@
 		<table>
 			<thead>
 				<tr>
-					<th>锅龋</th>
-					<th>捞抚</th>
-					<th>唱捞</th>
-					<th>林家</th>
-					<th>殿废老矫</th>
-					<th>荐沥</th>
-					<th>昏力</th>
+					<th>氩堩樃</th>
+					<th>鞚措</th>
+					<th>雮橃澊</th>
+					<th>欤检唽</th>
+					<th>霌彪鞚检嫓</th>
+					<th>靾橃爼</th>
+					<th>靷牅</th>
 				</tr>
 			</thead>
 			<c:forEach items="${studentList}" var="student">
@@ -27,15 +27,15 @@
 						<td>${student.addr}</td>
 						<td>${student.regDate}</td>
 
-						<td><a href="/insertup?sid=${student.sid}">[荐沥]</a></td>
-						<td><a href="/delete?sid=${student.sid}">[昏力]</a></td>
+						<td><a href="/insertup?sid=${student.sid}">[靾橃爼]</a></td>
+						<td><a href="/delete?sid=${student.sid}">[靷牅]</a></td>
 					</tr>
 				</tbody>
 			</c:forEach>
 		</table>
 	</div>
 	<div>
-		<input type="button" value="殿废" onclick="location.href='/insertForm';"/>
+		<input type="button" value="霌彪" onclick="location.href='/insertForm';"/>
 	</div>
 </body>
 </html>

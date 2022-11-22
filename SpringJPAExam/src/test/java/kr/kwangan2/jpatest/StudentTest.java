@@ -24,7 +24,7 @@ public class StudentTest {
 	@Test
 	public void dataPrepare() {
 
-		for (int i = 1; i <= 200; i++) {
+		for (int i = 1; i <= 100; i++) {
 			Student student  = new Student();
 			
 			student.setAddr("여기산다 ㅋ"+i);
@@ -64,7 +64,7 @@ public class StudentTest {
 		repo.save(student);
 	}
 	
-	@Test
+	//@Test
 	public void deleve() {
 		repo.deleteById(2L);
 		

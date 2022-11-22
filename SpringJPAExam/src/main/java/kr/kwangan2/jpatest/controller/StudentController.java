@@ -37,55 +37,50 @@ public class StudentController {
 
 	@RequestMapping("insertForm")
 	public String insertStudent() {
-		
+
 		return "insertForm";
 	}
-	
+
 	@RequestMapping("insert")
 	public String insertproc(Student student) {
-		
+
 		repo.save(student);
-		
+
 		return "redirect:/list";
 	}
-	
-	
+
 	@RequestMapping("insertup")
-	public String insertup(Model model,Long sid) {
-		
-		Student student=repo.findById(sid).get();
-		
+	public String insertup(Model model, Long sid) {
+
+		Student student = repo.findById(sid).get();
+
 		model.addAttribute("student", student);
-		
+
 		return "insertForm";
 	}
-	
-	
+
 	@RequestMapping("update")
 	public String update(Student student) {
-		
-		Student student1=repo.findById(student.getSid()).get();
-		
+
+		Student student1 = repo.findById(student.getSid()).get();
+
+		student1.setSid(student.getSid());
 		student1.setName(student.getName());
 		student1.setAge(student.getAge());
 		student1.setAddr(student.getAddr());
 		student1.setRegDate(new Date());
-		
+
 		repo.save(student);
-		
+
 		return "redirect:/list";
 	}
-	
-	
+
 	@RequestMapping("delete")
 	public String delete(Student student) {
-		
-	repo.deleteById(student.getSid());
-		
-		
+
+		repo.deleteById(student.getSid());
+
 		return "redirect:list";
 	}
-	
-	
-	
+
 }
